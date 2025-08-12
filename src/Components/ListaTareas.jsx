@@ -5,9 +5,9 @@ export const ListaTareas = () => {
   //Estado Inicial 
 
   const initialState = [{
-    id : new Date().getTime(),
-    tarea : 'Aprender Reducer',
-    finalizada : false
+    id: new Date().getTime(),
+    tarea: 'Aprender Reducer',
+    finalizada: false
   }]
 
   // Estados Modificados
@@ -20,52 +20,52 @@ export const ListaTareas = () => {
 
   const tareaModificada = {
     id: new Date().getTime(),
-    tarea : 'Aplicar Reducer',
-    finalizada : false
+    tarea: 'Aplicar Reducer',
+    finalizada: false
   }
 
 
   // Acciones
 
-    const agregarTarea = {
-      type : '[TAREAS] Agregar Tarea',
-      payload : nuevaTarea
-    }
+  const agregarTarea = {
+    type: '[TAREAS] Agregar Tarea',
+    payload: nuevaTarea
+  }
 
-    const modificarTarea = {
-      type : '[TAREAS] Modificar Tarea',
-      payload : tareaModificada
-    }
+  const modificarTarea = {
+    type: '[TAREAS] Modificar Tarea',
+    payload: tareaModificada
+  }
 
-    const eliminarTarea = {
-      type : '[TAREAS] Eliminar Tarea',
-    }
+  const eliminarTarea = {
+    type: '[TAREAS] Eliminar Tarea',
+  }
 
   // Reducer
 
   const TareaReducer = (state = initialState, action = {}) => {
-      switch (action.type) {
-        case '[TAREAS] Agregar Tarea':
-           return [...state, action.payload]
-        
-        case '[TAREAS] Modificar Tarea':
-            return [...state, action.payload]
-        
-        case '[TAREAS] Eliminar Tarea':
-            return []
-        default:
-         return state;
-      }
+    switch (action.type) {
+      case '[TAREAS] Agregar Tarea':
+        return [...state, action.payload]
+
+      case '[TAREAS] Modificar Tarea':
+        return [...state, action.payload]
+
+      case '[TAREAS] Eliminar Tarea':
+        return []
+      default:
+        return state;
+    }
   }
 
-console.log(TareaReducer(initialState, eliminarTarea))
+  console.log(TareaReducer(initialState, modificarTarea))
 
 
   return (
     <>
       <h1>useReducer</h1>
       <hr />
-      
+
     </>
   )
 }

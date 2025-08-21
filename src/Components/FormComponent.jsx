@@ -3,15 +3,23 @@ import React from 'react'
 export const FormComponent = () => {
   return (
     <form>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          name="email"
+        />
       </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" />
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          name="password"
+        />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">Submit</button>
     </form>
   )
 }

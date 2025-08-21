@@ -1,26 +1,13 @@
 import { useState } from 'react'
+import { UseForm } from '../Hooks/UseForm'
 
 export const FormComponent = () => {
 
-  const [formState, setFormState] = useState({
-    email: '',
-    password: ''
-  })
+
+  const {formState, handleForm, onsubmitForm, resetForm} = UseForm()
 
   const { email, password } = formState;
-
-  const handleForm = ({ target }) => {
-    const { value, name } = target
-    setFormState({
-      ...formState,
-      [name]: value
-    })
-  }
-
-  const onsubmitForm = (event) => {
-    event.preventDefault()
-    console.log(formState)
-  }
+  
 
   return (
     <form onSubmit={onsubmitForm}>
